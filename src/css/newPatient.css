@@ -1,48 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Source+Sans+Pro:wght@300;600&display=swap');
 
 body {
-  font-family: 'Roboto Condensed', sans-serif;
+	font-family: 'Roboto Condensed', sans-serif;
 
-  font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 }
 .tab {
-  overflow: hidden;
-  background: #D8E3E7;
-  box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.5);
+	overflow: hidden;
+	background: #d8e3e7;
+	box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.5);
 }
 .tab button {
-  background-color: inherit;
-  color: #000;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  font-size: 17px;
+	background-color: inherit;
+	color: #000;
+	float: left;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	transition: 0.3s;
+	font-size: 17px;
 }
 
 .tab button:hover {
-  background-color: #23B8C9;
-  color: #eee;
+	background-color: #23b8c9;
+	color: #eee;
 }
 
 .tab button.active {
-  background-color: #23B8C9;
-  color: #eee;
+	background-color: #23b8c9;
+	color: #eee;
 }
 
 .tabcontent {
-  display: none;
-  padding: 70px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
+	display: none;
+	padding: 70px 12px;
+	border: 1px solid #ccc;
+	border-top: none;
 }
 .btnGeneral {
-  float: inline-end;
-  border: none;
-  cursor: pointer;
-  width: 150px;
-  border-radius: 10px;
-  margin: 20px;
+	float: inline-end;
+	border: none;
+	cursor: pointer;
+	width: 150px;
+	border-radius: 10px;
+	margin: 20px;
 }
