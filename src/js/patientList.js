@@ -19,7 +19,7 @@ function drawPatientList() {
   <td>${aAge}</td>
   <td>${aBirthday}</td> 
   <td><a style=" padding-left:12px ;" href="../newPatient.html"><i class="fas fa-user-edit"></i> </a></td> 
-  <td><a style="color:red; padding-left:25px ;" href="../newPatient.html"><i class="fas fa-trash-alt"></i></a></td> 
+  <td><a style="color:red; padding-left:25px ;" href="../editPatient.html"><i class="fas fa-trash-alt"></i></a></td> 
   </tr>
   `;
 }
