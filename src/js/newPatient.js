@@ -225,78 +225,23 @@ console.log(allPacientes);
 function getPatientList() {
 	return patientList;
 }
+$(document).ready(function () {
+	//Posisiona el valor del select en la posicion 0
+	$('#gender').val('0');
 
-// function inputClear() {
-//   document.querySelector('#fullName').value = '';
-//   document.querySelector('#age').value = '';
-//   document.querySelector('#gender').value = '';
-//   document.querySelector('#address').value = '';
-//   document.querySelector('#placeOfBirth').value = '';
-//   document.querySelector('#dateOfBirth').value = '';
-//   document.querySelector('#antecedentesFamiliares') = '';
-//   document.querySelector('#motivoConsulta').value = '';
-//   document.querySelector('#motivo').value = '';
-//   document.querySelector('#control').value = '';
-//   document.querySelector('#sangradoEncias').value = '';
-//   document.querySelector('#restauracionProtesica') = '';
-//   document.querySelector('#otro').value = '';
-//   document.querySelector('#aspectoPaciente').value = '';
-//   document.querySelector('#cara').value = '';
-//   document.querySelector('#labios').value = '';
-//   document.querySelector('#palpacion').value = '';
-//   document.querySelector('#ganglios').value = '';
-//   document.querySelector('#atm').value = '';
-//   document.querySelector('#alta').value = '';
-//   document.querySelector('#baja').value = '';
-//   document.querySelector('#tratamientoMedico').value = '';
-//   document.querySelector('#tomaMedicamentos').value = '';
-//   document.querySelector('#cirugias').value = '';
-//   document.querySelector('#drogas').value = '';
-//   document.querySelector('#penicilina').value = '';
-//   document.querySelector('#anestecia').value = '';
-//   document.querySelector('#aspirina').value = '';
-//   document.querySelector('#yodo').value = '';
-//   document.querySelector('#merthiolate').value = '';
-//   document.querySelector('#otrasAlergias').value = '';
-//   document.querySelector('#anemia').value = '';
-//   document.querySelector('#hemofilia').value = '';
-//   document.querySelector('#deficitVit').value = '';
-//   document.querySelector('#sangradoExcesivo').value = '';
-//   document.querySelector('#vih').value = '';
-//   document.querySelector('#retrovirales').value = '';
-//   document.querySelector('#embarazada').value = '';
-//   document.querySelector('#anticonceptivos').value = '';
-//   document.querySelector('#morderse').value = '';
-//   document.querySelector('#fumar').value = '';
-//   document.querySelector('#citricos').value = '';
-//   document.querySelector('#morderObjetos').value = '';
-//   document.querySelector('#apretamiento').value = '';
-//   document.querySelector('#respiracionBucal').value = '';
-//   document.querySelector('#venereas').value = '';
-//   document.querySelector('#corazon').value = '';
-//   document.querySelector('#hepatitis').value = '';
-//   document.querySelector('#fiebreReumatica').value = '';
-//   document.querySelector('#asma').value = '';
-//   document.querySelector('#diabetes').value = '';
-//   document.querySelector('#ulcera').value = '';
-//   document.querySelector('#tiroides').value = '';
-//   document.querySelector('#limitacionBoca').value = '';
-//   document.querySelector('#ruidoMandibular').value = '';
-//   document.querySelector('#herpes').value = '';
-//   document.querySelector('#carrillos').value = '';
-//   document.querySelector('#mucosa').value = '';
-//   document.querySelector('#encia').value = '';
-//   document.querySelector('#lengua').value = '';
-//   document.querySelector('#paladar').value = '';
-//   document.querySelector('#panoramica').value = '';
-//   document.querySelector('#coronal').value = '';
-//   document.querySelector('#periapal').value = '';
-//   document.querySelector('#imagenRadiografia').value = '';
-//   document.querySelector('#laboratorio').value = '';
-//   document.querySelector('#modelo').value = '';
-//   document.querySelector('#tensionArterial').value = '';
-//   document.querySelector('#observaciones').value = '';
-//   document.querySelector('#diagnosticoTratamiento').value ='';
-//   document.querySelector('#fechaTratamiento').value = '';
-//   document.querySelector('#descripcionTratamiento').value = '';
-// }
+	// Borra todo el contenido de los input cuando salvamos el documento
+	function borrarInput() {
+		$('.input').val('');
+	}
+
+	$('#gender').on('change', (event) => {
+		esconderInputSegunGenero(event);
+	});
+	function esconderInputSegunGenero(event) {
+		if (event.target.value === 'Masculino') {
+			$('#embarazada').hide();
+			$('#anticonceptivos').hide();
+		} else $('#embarazada').show();
+		$('#anticonceptivos').show();
+	}
+});
