@@ -29,6 +29,7 @@ document
 
 function saveDatosGen() {
 	let sName = document.querySelector('#fullName').value,
+	    sLastName = document.querySelector('#lastName').value,
 		sAge = document.querySelector('#age').value,
 		sGender = document.querySelector('#gender').value,
 		sAddress = document.querySelector('#address').value,
@@ -37,6 +38,7 @@ function saveDatosGen() {
 
 	guardarDatos('datosGenerales', {
 		sName,
+		sLastName,
 		sAge,
 		sGender,
 		sAddress,

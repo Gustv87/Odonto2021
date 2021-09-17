@@ -1,27 +1,29 @@
-function drawPatientList() {
-  let tbody = document.querySelector('#patientTable tbody');
+// const url = 'https://dentalgroup-hn-api.herokuapp.com/api/';
+const url = 'http://localhost:8080/api/'
 
-  tbody.innerHTML = '';
+let contenido = document.querySelector('#contenido');
 
-  const aPacientes = JSON.parse(localStorage.getItem('Pacientes'));
-
-  const aName = aPacientes.datosGenerales.sName,
-    aAge = aPacientes.datosGenerales.sAge,
-    aBirthday = aPacientes.datosGenerales.sDateOfBirth;
-
-  console.log(aPacientes);
-
-  console.log(aPacientes.datosGenerales.sName);
-
-  document.getElementById('tbody').innerHTML = `
-  <tr>
-  <td>${aName}</td>
-  <td>${aAge}</td>
-  <td>${aBirthday}</td> 
-  <td><a style=" padding-left:12px ;" href="../newPatient.html"><i class="fas fa-user-edit"></i> </a></td> 
-  <td><a style="color:red; padding-left:25px ;" href="../editPatient.html"><i class="fas fa-trash-alt"></i></a></td> 
-  </tr>
-  `;
+function getPacientes() {
+	fetch(`${url}pacientes`)
+		.then((res) => res.json())
+		.then((datos) => {
+			tabla(datos);
+		});
 }
+getPacientes();
 
-drawPatientList();
+function tabla(datos) {
+	console.log(datos);
+	contenido.innerHTML = '';
+	for (let valor of datos) {
+		contenido.innerHTML += `
+    <tr>
+                
+                <td>${valor.nombre}</td>
+                <td>${valor.apellidos}</td>
+                <td>${valor.edad}</td>
+                <td><a style=" padding-left:12px ;" href="../newPatient.html"><i class="fas fa-user-edit"></i> </a></td>
+                <td><a style="color:red; padding-left:25px ;" href="../editPatient.html"><i class="fas fa-trash-alt"></i></a></td>
+     </tr>`;
+	}
+}
