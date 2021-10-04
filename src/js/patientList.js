@@ -1,5 +1,5 @@
-// const url = 'https://dentalgroup-hn-api.herokuapp.com/api/';
-const url = 'http://localhost:8080/api/';
+const url = 'https://dentalgroup-hn-api.herokuapp.com/api/';
+// const url = 'http://localhost:8080/api/';
 
 let contenido = document.querySelector('#contenido');
 let resultados = '';
