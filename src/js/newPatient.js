@@ -19,9 +19,10 @@ const patientList = {};
 
 function guardarDatos(seccion, datos) {
 	patientList[seccion] = datos;
-	console.log(patientList);
+	//console.log(patientList);
 
 	localStorage.setItem('Pacientes', JSON.stringify(patientList));
+	//console.log(localStorage.getItem('Pacientes'));
 }
 document
 	.querySelector('#btnSaveGenerales')
@@ -29,7 +30,7 @@ document
 
 function saveDatosGen() {
 	let sName = document.querySelector('#fullName').value,
-	    sLastName = document.querySelector('#lastName').value,
+		sLastName = document.querySelector('#lastName').value,
 		sAge = document.querySelector('#age').value,
 		sGender = document.querySelector('#gender').value,
 		sAddress = document.querySelector('#address').value,
@@ -220,21 +221,38 @@ function saveSecuencia() {
 		sFechaTratamiento,
 		sDescripcionTratamiento,
 	});
+	postPatient();
 }
 allPacientes.push(patientList);
-console.log(allPacientes);
+// console.log(allPacientes);
 
 function getPatientList() {
 	return patientList;
 }
+function postPatient() {
+	const url = 'http://localhost:8080/api/';
+	let data = localStorage.getItem('Pacientes');
+	console.log(data);
+
+	fetch(`${url}pacientes`, {
+		method: 'POST',
+		body: data,
+		headers: { 'Content-type': 'application/json; charset=UTF-8' },
+	})
+		.then((response) => response.json())
+		.then((json) => console.log(json))
+		.catch((err) => console.log(err));
+	localStorage.setItem('Pacientes', JSON.stringify(''));
+}
+
 $(document).ready(function () {
 	//Posisiona el valor del select en la posicion 0
 	$('#gender').val('0');
 
 	// Borra todo el contenido de los input cuando salvamos el documento
-	function borrarInput() {
-		$('.input').val('');
-	}
+	// function borrarInput() {
+	// 	$('.input').val('');
+	// }
 
 	$('#gender').on('change', (event) => {
 		esconderInputSegunGenero(event);
