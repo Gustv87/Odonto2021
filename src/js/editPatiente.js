@@ -1,5 +1,5 @@
-// const url = 'http://localhost:8080/api/';
-const url = 'https://dentalgroup-hn-api.herokuapp.com/api/';
+const url = 'http://localhost:8081/api/';
+// const url = 'https://dentalgroup-hn-api.herokuapp.com/api/';
 $(document).ready(function () {
 	let params = new URLSearchParams(document.location.search.substring(1));
 	let id = params.get('id');

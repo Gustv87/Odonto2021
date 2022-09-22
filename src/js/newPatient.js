@@ -230,8 +230,8 @@ function getPatientList() {
 	return patientList;
 }
 function postPatient() {
-	const url = 'https://dentalgroup-hn-api.herokuapp.com/api/';
-	// const url = 'http://localhost:8080/api/';
+	// const url = 'https://dentalgroup-hn-api.herokuapp.com/api/';
+	const url = 'http://localhost:8081/api/';
 	let data = localStorage.getItem('Pacientes');
 	console.log(data);
 
